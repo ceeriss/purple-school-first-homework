@@ -1,11 +1,13 @@
 import Button from "../Button/Button";
 import SearchInput from "../SearchInput/SearchInput";
-export default function SearchForm() {
-	const btnText = "Поиск"
-	const placeholder = "Введите название";
-	return (
+export default function SearchForm({ search, onSearchChange }) {
+  const btnText = "Поиск";
+  const placeholder = "Введите название";
+  return (
     <div className="flex gap-[8px] mt-[24px]">
       <SearchInput
+        value={search}
+        onChange={onSearchChange}
         placeholder={placeholder}
         img={
           <img
