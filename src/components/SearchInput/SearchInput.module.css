@@ -1,0 +1,27 @@
+.SearchInput {
+  position: relative;
+
+  height: 64px;
+
+  width: 384px;
+
+  border-radius: 12px;
+
+  border-width: 1px;
+
+  border-color: rgb(50, 59, 84);
+
+  background-color: #0000001a;
+
+  padding-left: 56px;
+
+  padding-right: 56px;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 16px;
+
+  color: rgb(71, 80, 105);
+}

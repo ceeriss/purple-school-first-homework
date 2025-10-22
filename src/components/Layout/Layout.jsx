@@ -1,9 +1,10 @@
+import layoutStyles from "./layout.module.css";
 export default function Layout() {
 	return (
-    <div className="flex justify-between mb-[100px]">
+    <div className={layoutStyles.layoutDiv}>
       <img src="./logo.png" alt="logo" />
       <nav>
-        <ul className="flex gap-[32px] text-white font-[600] text-[16px] leading-[24px] ">
+        <ul className={layoutStyles.layout_ul}>
           <li>
             <a href="#">Поиск фильмов</a>
           </li>

@@ -1,8 +1,5 @@
 import '../../index.css'
+import ZagolovokStyles from './Zagolovok.module.css'
 export default function Zagolovok ({text}) {
-	return (
-    <h1 className="font-[Poppins] text-[64px] leading-[80px] font-[600] tracking-[-2%] text-[#EBEEF5]">
-      {text}
-    </h1>
-  );
+	return <h1 className={ZagolovokStyles.Zagalovok}>{text}</h1>;
 }
