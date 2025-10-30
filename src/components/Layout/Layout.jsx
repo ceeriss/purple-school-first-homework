@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import layoutStyles from "./layout.module.css";
 
 export default function Layout() {
+  const profiles = JSON.parse(localStorage.getItem("profiles") || "[]");
+  const loggedInUser = profiles.find((profile) => profile.isLogined);
+
   return (
     <div className={layoutStyles.layoutDiv}>
       <img src="./logo.png" alt="logo" />
@@ -13,7 +16,7 @@ export default function Layout() {
           <li>
             <a href="#">Мои фильмы</a>
           </li>
-          <li>Профиль</li>
+          <li>{loggedInUser ? loggedInUser.name : "Профиль"}</li>
           <li>
             <Link to="/LoginPage">Войти</Link>
           </li>
