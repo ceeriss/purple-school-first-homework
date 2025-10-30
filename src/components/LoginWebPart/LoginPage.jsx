@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 
 export function LoginPage() {
   const [isLogind, setIsLogind] = useState(false);
+  const [userName, setUserName] = useState("");
   const NameInput = useRef();
 
   const handleClick = () => {
@@ -11,29 +12,37 @@ export function LoginPage() {
     }
 
     const inputName = NameInput.current.value;
-    const savedName = localStorage.getItem("name");
 
-    if (savedName === null) {
-      // Аккаунта нет - создаем новый
-      localStorage.setItem("name", inputName);
-      setIsLogind(true);
-      alert(`Аккаунт создан! Добро пожаловать, ${inputName}!`);
-    } else if (inputName === savedName) {
-      // Аккаунт есть и имя совпадает - вход
-      setIsLogind(true);
-      alert(`Вы успешно вошли в профиль, ${savedName}!`);
-    } else {
-      // Аккаунт есть, но имя не совпадает
-      alert(`Имя не совпадает! Зарегистрирован пользователь: ${savedName}`);
-    }
+    // Получаем текущие профили из localStorage или пустой массив
+    const existingProfiles = JSON.parse(
+      localStorage.getItem("profiles") || "[]"
+    );
+
+    // Создаем новый массив с добавленным пользователем
+    const updatedProfiles = [
+      ...existingProfiles,
+      {
+        name: inputName,
+        isLogined: true,
+      },
+    ];
+
+    // Сохраняем массив объектов в localStorage
+    localStorage.setItem("profiles", JSON.stringify(updatedProfiles));
+
+    setIsLogind(true);
+    setUserName(inputName);
+    alert(`Добро пожаловать, ${inputName}!`);
   };
 
   const handleExitClick = () => {
     setIsLogind(false);
+    setUserName("");
     if (NameInput.current) {
       NameInput.current.value = "";
     }
   };
+
   return (
     <>
       <div className="mt-[20px] flex justify-between">
@@ -46,7 +55,7 @@ export function LoginPage() {
             <li>
               <a href="#">Мои фильмы</a>
             </li>
-            <li>Профиль</li>
+            <li>{!isLogind ? "Профиль" : userName}</li>
             <li onClick={handleExitClick}>
               <a href="#">{isLogind ? "Выйти" : "Войти"}</a>
             </li>
