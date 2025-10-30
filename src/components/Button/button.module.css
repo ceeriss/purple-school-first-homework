@@ -1,0 +1,27 @@
+.button {
+  margin-top: 3px;
+
+  height: 58px;
+
+  width: 119px;
+
+  cursor: pointer;
+
+  border-radius: 12px;
+
+  border-width: 1px;
+
+  border-style: none;
+
+  background-color: rgb(123, 110, 246);
+
+  font-family: Poppins;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 24px;
+
+  color: rgb(255, 255, 255);
+}

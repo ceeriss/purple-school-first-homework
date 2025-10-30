@@ -1,0 +1,96 @@
+.MovieCard_main_div {
+  position: relative;
+
+  margin-top: 80px;
+
+  margin-bottom: 80px;
+
+  height: 520px;
+
+  width: 282px;
+
+  border-radius: 12px;
+
+  background-color: rgb(42, 41, 59);
+}
+.MovieCard_secondDiv {
+  position: absolute;
+
+  left: 16px;
+
+  top: 16px;
+
+  display: flex;
+
+  height: 32px;
+
+  width: 65px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  border-radius: 8px;
+
+  background-color: #000000a6;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  line-height: 24px;
+
+  color: rgb(255, 173, 73);
+}
+.MovieCard_thirdDiv {
+  margin-top: 8px;
+
+  margin-bottom: 8px;
+
+  display: flex;
+
+  justify-content: center;
+}
+.title {
+  margin-left: 16px;
+
+  margin-right: 16px;
+
+  margin-top: 24px;
+
+  margin-bottom: 24px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  line-height: 24px;
+
+  color: rgb(235, 238, 245);
+}
+.favorite_div {
+  margin-left: 16px;
+
+  margin-right: 16px;
+
+  margin-top: 16px;
+
+  margin-bottom: 16px;
+
+  display: flex;
+
+  cursor: pointer;
+
+  gap: 8px;
+}
+.favorite_text {
+  font-size: 16px;
+
+  font-weight: 600;
+
+  line-height: 24px;
+
+  color: rgb(123, 110, 246);
+}
