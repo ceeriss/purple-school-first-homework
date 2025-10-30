@@ -1,18 +1,21 @@
+import { Link } from "react-router-dom";
 import layoutStyles from "./layout.module.css";
+
 export default function Layout() {
-	return (
+  return (
     <div className={layoutStyles.layoutDiv}>
       <img src="./logo.png" alt="logo" />
       <nav>
         <ul className={layoutStyles.layout_ul}>
           <li>
-            <a href="#">Поиск фильмов</a>
+            <Link to="/">Поиск фильмов</Link>
           </li>
           <li>
             <a href="#">Мои фильмы</a>
           </li>
+          <li>Профиль</li>
           <li>
-            <a href="#">Войти</a>
+            <Link to="/LoginPage">Войти</Link>
           </li>
         </ul>
       </nav>
